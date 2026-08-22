@@ -307,7 +307,7 @@ class SpecialUserFlairs extends SpecialPage {
 	private function drag_handle( int $position, int $total ): string {
 		$label = $this->msg( 'userflairs-drag-handle' )->text();
 		$described = $this->msg( 'userflairs-position', $position, $total )->text();
-		$icon = '<svg class="uf-manage__handle-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M10 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm-4 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5-9a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>';
+		$icon = '<svg class="uf-manage__handle-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M10 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm-4 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5-9a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>';
 		// thank you https://github.com/primer/octicons
 
 		return Html::rawElement( 'button', [ 'type' => 'button', 'class' => 'uf-manage__handle', 'title' => $label, 'aria-label' => $label . ', ' . $described ], $icon );
