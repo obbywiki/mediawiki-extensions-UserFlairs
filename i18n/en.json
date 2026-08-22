@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wolfite"
+		]
+	},
+	"userflairs": "User flairs",
+	"userflairs-desc": "Admin-configurable flairs for user groups",
+	"userflairs-summary": "Assign or edit flairs per each user group.",
+	"userflairs-intro": "Upload an image first ($1), then enter the file name here and save.",
+	"userflairs-upload-link": "upload page",
+	"userflairs-reorder-help": "The group at the top is shown when someone is in more than one group with a flair. Drag the handle to reorder, then save.",
+	"userflairs-no-assigned": "No flairs yet. Choose a group below to add one.",
+	"userflairs-assigned": "Assigned flairs",
+	"userflairs-unassigned": "Other groups available",
+	"userflairs-unsaved": "You have unsaved changes.",
+	"userflairs-drag-handle": "Drag to reorder",
+	"userflairs-position": "Position $1 of $2",
+	"userflairs-moved": "Moved $1 to position $2.",
+	"userflairs-back": "Back to all flairs",
+	"userflairs-group-title": "Flair for $1",
+	"userflairs-file": "Image file",
+	"userflairs-save": "Save",
+	"userflairs-remove": "Remove flair",
+	"userflairs-saved": "Saved.",
+	"userflairs-removed": "Flair removed.",
+	"userflairs-invalid-file": "\"$1\" is not a usable image file on this wiki.",
+	"userflairs-unknown-group": "That group is not on this wiki.",
+	"right-userflairs-manage": "Assign flairs to user groups",
+	"action-userflairs-manage": "assign flairs to user groups",
+	"apihelp-query+userflairs-summary": "Get the flair shown for one or more users.",
+	"apihelp-query+userflairs-param-users": "Users to look up.",
+	"apihelp-query+userflairs-example-1": "Get the flair for user Example.",
+	"apihelp-query+userflairgroups-summary": "List every group that has a flair.",
+	"apihelp-query+userflairgroups-example-1": "List all group flairs."
+}

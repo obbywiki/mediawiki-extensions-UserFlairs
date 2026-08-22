@@ -1,0 +1,17 @@
+/* citizen header flair adjustments */
+
+.citizen-userMenu .citizen-dropdown-summary > .uf-flair--header {
+	position: absolute;
+	right: 0.2rem;
+	bottom: 0.2rem;
+	z-index: 2;
+	display: block;
+	width: 0.75rem;
+	height: 0.75rem;
+	margin: 0;
+	pointer-events: none;
+	object-fit: contain;
+	border-radius: var( --border-radius-base );
+	background-color: var( --color-surface-2 );
+	box-shadow: 0 0 0 1px var( --color-surface-0 );
+}

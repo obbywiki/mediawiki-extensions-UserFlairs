@@ -1,0 +1,44 @@
+/* the flairs themselves */
+
+.ip-avatar,
+.profile-avatar {
+	position: relative;
+}
+
+.uf-flair {
+	display: block;
+	width: var( --uf-flair-size );
+	height: var( --uf-flair-size );
+	pointer-events: none;
+	line-height: 0;
+}
+
+.profile-avatar .uf-flair,
+.ip-avatar > .uf-flair {
+	position: absolute;
+	right: 0.35rem;
+	bottom: 0.35rem;
+	z-index: 2;
+}
+
+.profile-avatar.uf-has-avatar-edit .uf-flair,
+.profile-avatar:has( .profile-avatar-edit-button ) .uf-flair,
+.profile-avatar:has( .profile-avatar-edit-action ) .uf-flair {
+	right: 15px;
+	bottom: calc( 15px + 36px + 0.25rem );
+	z-index: 3;
+}
+
+.uf-flair__image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	border-radius: var( --border-radius-base );
+	background-color: var( --color-surface-2 );
+	box-shadow: 0 0 0 2px var( --color-surface-0 );
+}
+
+.uf-flair--relocatable {
+	display: none;
+}

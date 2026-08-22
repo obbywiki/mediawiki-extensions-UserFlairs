@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wolfite"
+		]
+	},
+	"userflairs": "UserFlairs",
+	"userflairs-desc": "Extension description shown on Special:Version",
+	"userflairs-summary": "Introductory text shown at the top of Special:UserFlairs.",
+	"userflairs-intro": "Help text on a group subpage. $1 is a link to Special:Upload.",
+	"userflairs-upload-link": "Link text for the upload page on the group form.",
+	"userflairs-reorder-help": "Explains drag-to-reorder on Special:UserFlairs.",
+	"userflairs-no-assigned": "Shown when no groups have a flair yet.",
+	"userflairs-assigned": "Heading for groups that already have a flair.",
+	"userflairs-unassigned": "Heading for groups that do not have a flair yet.",
+	"userflairs-unsaved": "Inline notice next to Save after the order is changed but not saved.",
+	"userflairs-drag-handle": "Tooltip and accessible name for the drag handle.",
+	"userflairs-position": "Accessible position of a flair in the list. $1 is the 1-based index, $2 is the total.",
+	"userflairs-moved": "Screen-reader announcement after a flair is reordered. $1 is the group label, $2 is the new 1-based position.",
+	"userflairs-back": "Link back to Special:UserFlairs from a group subpage.",
+	"userflairs-group-title": "Title of Special:UserFlairs/group (groups subpage). $1 is the localized group name.",
+	"userflairs-file": "Label for the wiki file name field.",
+	"userflairs-save": "Submit button on Special:UserFlairs.",
+	"userflairs-remove": "Destructive button to delete a group's flair.",
+	"userflairs-saved": "Success message after saving.",
+	"userflairs-removed": "Success message after removing a flair.",
+	"userflairs-invalid-file": "Error when the given file is missing or not a renderable image. $1 is the submitted file name.",
+	"userflairs-unknown-group": "Error when the special-page subpage is not a known group.",
+	"right-userflairs-manage": "",
+	"action-userflairs-manage": "",
+	"apihelp-query+userflairs-summary": "",
+	"apihelp-query+userflairs-param-users": "",
+	"apihelp-query+userflairs-example-1": "",
+	"apihelp-query+userflairgroups-summary": "",
+	"apihelp-query+userflairgroups-example-1": ""
+}

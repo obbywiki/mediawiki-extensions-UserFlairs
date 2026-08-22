@@ -1,0 +1,33 @@
+[
+	{
+		"name": "uf_group_flair",
+		"comment": "Flair image assigned to a user group",
+		"columns": [
+			{
+				"name": "ufgf_group",
+				"comment": "User group id (e.g. sysop)",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "ufgf_file",
+				"comment": "File title without namespace prefix",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "ufgf_priority",
+				"comment": "The priority of which the flair should be displayed, highest applicable flair is chosen",
+				"type": "integer",
+				"options": { "notnull": true, "default": 0 }
+			},
+			{
+				"name": "ufgf_updated_at",
+				"type": "mwtimestamp",
+				"options": { "notnull": true }
+			}
+		],
+		"indexes": [],
+		"pk": [ "ufgf_group" ]
+	}
+]

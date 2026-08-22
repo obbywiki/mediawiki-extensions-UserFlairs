@@ -1,0 +1,159 @@
+{
+	"manifest_version": 2,
+	"name": "UserFlairs",
+	"descriptionmsg": "userflairs-desc",
+	"author": [
+		"[https://obby.wiki The Obby Wiki]"
+	],
+	"version": "0.1.0",
+	"license-name": "GPL-3.0-or-later",
+	"url": "https://github.com/obbywiki/mediawiki-extensions-UserFlairs",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.43.0"
+	},
+
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\UserFlairs\\": "src/"
+	},
+
+	"ServiceWiringFiles": [
+		"src/ServiceWiring.php"
+	],
+
+	"AvailableRights": [
+		"userflairs-manage"
+	],
+
+	"GroupPermissions": {
+		"sysop": {
+			"userflairs-manage": true
+		}
+	},
+
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\UserFlairs\\Hooks",
+			"services": [
+				"MainConfig",
+				"UserFlairs.FlairResolver",
+				"UserFlairs.FlairHtml",
+				"UserFlairs.FlairPlacement",
+				"UserFactory"
+			]
+		}
+	},
+
+	"Hooks": {
+		"BeforePageDisplay": "main",
+		"IntegratedProfilesAfterAvatar": "main",
+		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\UserFlairs\\Hooks::onLoadExtensionSchemaUpdates",
+		"UserProfileV2ProfileAfterMasthead": "main"
+	},
+
+	"SpecialPages": {
+		"UserFlairs": {
+			"class": "MediaWiki\\Extension\\UserFlairs\\Specials\\SpecialUserFlairs",
+			"services": [
+				"UserFlairs.FlairStore",
+				"UserFlairs.FlairCache",
+				"UserFlairs.FlairFileLookup",
+				"UserGroupManager"
+			]
+		}
+	},
+
+	"APIListModules": {
+		"userflairs": {
+			"class": "MediaWiki\\Extension\\UserFlairs\\Api\\ApiQueryUserFlairs",
+			"services": [
+				"UserFlairs.FlairResolver",
+				"UserFactory"
+			]
+		},
+		"userflairgroups": {
+			"class": "MediaWiki\\Extension\\UserFlairs\\Api\\ApiQueryUserFlairGroups",
+			"services": [
+				"UserFlairs.FlairResolver"
+			]
+		}
+	},
+
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "UserFlairs"
+	},
+
+	"ResourceModules": {
+		"ext.UserFlairs.styles": {
+			"styles": [
+				"resources/css/uf.css"
+			]
+		},
+		"ext.UserFlairs.header": {
+			"scripts": [
+				"resources/js/header.js"
+			],
+			"styles": [
+				"resources/css/header.css"
+			],
+			"dependencies": [
+				"ext.UserFlairs.styles",
+				"mediawiki.base"
+			]
+		},
+		"ext.UserFlairs.manage.styles": {
+			"styles": [
+				"resources/css/manage.css"
+			]
+		},
+		"ext.UserFlairs.manage": {
+			"scripts": [
+				"resources/js/manage.js"
+			],
+			"dependencies": [
+				"ext.UserFlairs.manage.styles",
+				"mediawiki.base"
+			],
+			"messages": [
+				"userflairs-drag-handle",
+				"userflairs-position",
+				"userflairs-moved"
+			]
+		},
+		"ext.UserFlairs": {
+			"scripts": [
+				"resources/js/uf.js"
+			],
+			"dependencies": [
+				"ext.UserFlairs.styles",
+				"mediawiki.base"
+			]
+		}
+	},
+
+	"MessagesDirs": {
+		"UserFlairs": [
+			"i18n"
+		]
+	},
+
+	"ExtensionMessagesFiles": {
+		"UserFlairsAlias": "UserFlairs.alias.php"
+	},
+
+	"config": {
+		"UserFlairsEnabled": {
+			"value": true,
+			"description": "Whether UserFlairs is enabled."
+		},
+		"UserFlairsCacheTTL": {
+			"value": 300,
+			"description": "WAN/object cache TTL in seconds for the group flair catalog."
+		},
+		"UserFlairsSize": {
+			"value": 32,
+			"description": "Flair thumbnail size in pixels."
+		}
+	}
+}
