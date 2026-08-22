@@ -1,6 +1,8 @@
 # UserFlairs
 
-Discourse-inspired flairs for MediaWiki user groups. Admins assign a wiki image to a group; the highest-priority flair is shown on the user's profile picture.
+Adds the ability to set flairs for user groups similar to Discourse. Flairs are small images that appear next to a user's profile picture (if a supported extension is installed) that quickly signify what group that user is a member of. This could be the site logo for administrators, or a shield icon for moderators, etc.
+
+Read below for how to install. This extension will still work without a companion extension, but will visually do nothing.
 
 ## Installation
 
