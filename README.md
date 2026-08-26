@@ -21,4 +21,10 @@ Administrators get the `userflairs-manage` right by default, but you'll have to 
 
 ## Usage
 
-TODO
+Users with the `userflairs-manage` right can use `Special:UserFlairs` to customize flairs on their wiki. This page offers three main controls:
+
+* Assign a flair (image) to an available user group
+* Modify an existing flair for a user group
+* Re-order all groups in order to sort the priority of which flairs already display
+
+If the user is in multiple groups which have configured flairs, then the highest flair will be used. This means you should not structure groups by power level. For example, you may want to put the bot group above administrator, so that a bot should inherit the bot flair even if it is an administrator.
