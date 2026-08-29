@@ -5,32 +5,27 @@
 	"author": [
 		"[https://obby.wiki The Obby Wiki]"
 	],
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"license-name": "GPL-3.0-or-later",
 	"url": "https://github.com/obbywiki/mediawiki-extensions-UserFlairs",
 	"type": "other",
 	"requires": {
 		"MediaWiki": ">= 1.43.0"
 	},
-
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\UserFlairs\\": "src/"
 	},
-
 	"ServiceWiringFiles": [
 		"src/ServiceWiring.php"
 	],
-
 	"AvailableRights": [
 		"userflairs-manage"
 	],
-
 	"GroupPermissions": {
 		"sysop": {
 			"userflairs-manage": true
 		}
 	},
-
 	"HookHandlers": {
 		"main": {
 			"class": "MediaWiki\\Extension\\UserFlairs\\Hooks",
@@ -43,14 +38,12 @@
 			]
 		}
 	},
-
 	"Hooks": {
 		"BeforePageDisplay": "main",
 		"IntegratedProfilesAfterAvatar": "main",
 		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\UserFlairs\\Hooks::onLoadExtensionSchemaUpdates",
 		"UserProfileV2ProfileAfterMasthead": "main"
 	},
-
 	"SpecialPages": {
 		"UserFlairs": {
 			"class": "MediaWiki\\Extension\\UserFlairs\\Specials\\SpecialUserFlairs",
@@ -62,7 +55,6 @@
 			]
 		}
 	},
-
 	"APIListModules": {
 		"userflairs": {
 			"class": "MediaWiki\\Extension\\UserFlairs\\Api\\ApiQueryUserFlairs",
@@ -78,12 +70,10 @@
 			]
 		}
 	},
-
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteExtPath": "UserFlairs"
 	},
-
 	"ResourceModules": {
 		"ext.UserFlairs.styles": {
 			"styles": [
@@ -131,17 +121,14 @@
 			]
 		}
 	},
-
 	"MessagesDirs": {
 		"UserFlairs": [
 			"i18n"
 		]
 	},
-
 	"ExtensionMessagesFiles": {
 		"UserFlairsAlias": "UserFlairs.alias.php"
 	},
-
 	"config": {
 		"UserFlairsEnabled": {
 			"value": true,
