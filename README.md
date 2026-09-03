@@ -10,6 +10,7 @@ Read below for how to install. This extension will still work without a companio
 
 * MediaWiki 1.43
 * Either [IntegratedProfiles](https://github.com/obbywiki/mediawiki-extensions-IntegratedProfiles) or [UserProfileV2](https://github.com/obbywiki/mediawiki-extensions-UserProfileV2) enabled (more support exists for IP)
+*** If you do not have either one of these extensions install and are not using Citizen, then this extension will do nothing more than add a configuration page and an API.
 
 ### Setup
 
@@ -17,7 +18,7 @@ Read below for how to install. This extension will still work without a companio
 2. Add `wfLoadExtension( 'UserFlairs' );` to `LocalSettings.php`.
 3. Run `maintenance/update.php`.
 
-Administrators get the `userflairs-manage` right by default, but you'll have to assign any other role manually.
+Administrators get the `userflairs-manage` right by default, but you'll have to assign it to any other user group manually.
 
 ## Usage
 
