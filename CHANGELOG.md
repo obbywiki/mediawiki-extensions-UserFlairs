@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/obbywiki/mediawiki-extensions-UserFlairs/compare/v0.1.1...v0.2.0) (2026-09-11)
+
+
+### Features
+
+* make saving flairs a notice instead of an entire screen ([00f1463](https://github.com/obbywiki/mediawiki-extensions-UserFlairs/commit/00f1463618ad9197cfeb74027f46404b4ec7078a))
+* remove ui backgrounds from flairs ([3c625c0](https://github.com/obbywiki/mediawiki-extensions-UserFlairs/commit/3c625c0943e675c155546f4ae48662bb216fd28a))
+
 ## [0.1.1](https://github.com/obbywiki/mediawiki-extensions-UserFlairs/compare/v0.1.0...v0.1.1) (2026-08-29)
 
 
