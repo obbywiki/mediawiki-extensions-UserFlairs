@@ -12,6 +12,4 @@
 	pointer-events: none;
 	object-fit: contain;
 	border-radius: var( --border-radius-base );
-	background-color: var( --color-surface-2 );
-	box-shadow: 0 0 0 1px var( --color-surface-0 );
 }
