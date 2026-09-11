@@ -60,6 +60,7 @@ class SpecialUserFlairs extends SpecialPage {
 		$out->addBodyClasses( [ 'uf-manage-page' ] );
 		$out->addModuleStyles( [ 'ext.UserFlairs.styles', 'ext.UserFlairs.manage.styles' ] );
 		$out->addModules( [ 'ext.UserFlairs.manage' ] );
+		$this->maybe_show_notice();
 
 		$assigned = $this->assigned_rows();
 		$assigned_ids = [];
@@ -93,7 +94,9 @@ class SpecialUserFlairs extends SpecialPage {
 			$form->setFooterHtml( $this->unsaved_notice() );
 			$form->setSubmitTextMsg( 'userflairs-save' );
 			$form->setSubmitCallback( [ $this, 'on_submit_order' ] );
-			$form->show();
+			if ( $form->show() ) {
+				return;
+			}
 		}
 
 		if ( $unassigned === [] ) {
@@ -129,9 +132,8 @@ class SpecialUserFlairs extends SpecialPage {
 
 		$this->store->save_order( array_keys( $clean ) );
 		$this->cache->purge();
-		$this->getOutput()->addWikiMsg( 'userflairs-saved' );
 
-		return Status::newGood();
+		return $this->redirect_with_notice( 'saved' );
 	}
 
 	private function execute_group( string $group ): void {
@@ -148,6 +150,7 @@ class SpecialUserFlairs extends SpecialPage {
 			'ext.UserFlairs.styles',
 			'ext.UserFlairs.manage.styles',
 		] );
+		$this->maybe_show_notice();
 		$out->addHTML( Html::rawElement(
 			'p',
 			[ 'class' => 'uf-manage__back' ],
@@ -230,19 +233,16 @@ class SpecialUserFlairs extends SpecialPage {
 		if ( $this->getRequest()->getCheck( 'uf-remove' ) ) {
 			$this->store->delete_group( $group );
 			$this->cache->purge();
-			$this->getOutput()->addWikiMsg( 'userflairs-removed' );
-			$this->getOutput()->redirect( $this->getPageTitle()->getFullURL() );
 
-			return Status::newGood();
+			return $this->redirect_with_notice( 'removed' );
 		}
 
 		$file_raw = trim( (string)( $data['file'] ?? '' ) );
 		if ( $file_raw === '' ) {
 			$this->store->delete_group( $group );
 			$this->cache->purge();
-			$this->getOutput()->addWikiMsg( 'userflairs-removed' );
 
-			return Status::newGood();
+			return $this->redirect_with_notice( 'removed' );
 		}
 
 		$described = $this->file_lookup->describe( $file_raw );
@@ -252,9 +252,8 @@ class SpecialUserFlairs extends SpecialPage {
 
 		$this->store->save_group( $group, $described['file'] );
 		$this->cache->purge();
-		$this->getOutput()->addWikiMsg( 'userflairs-saved' );
 
-		return Status::newGood();
+		return $this->redirect_with_notice( 'saved', $group );
 	}
 
 	/**
@@ -291,6 +290,27 @@ class SpecialUserFlairs extends SpecialPage {
 			],
 			$items
 		);
+	}
+
+	private function maybe_show_notice(): void {
+		$notice = $this->getRequest()->getVal( 'notice', '' );
+		$messages = [ 'saved' => 'userflairs-saved', 'removed' => 'userflairs-removed' ];
+		if ( !isset( $messages[$notice] ) ) {
+			return;
+		}
+
+		$out = $this->getOutput();
+		$out->addModuleStyles( [ 'mediawiki.codex.messagebox.styles' ] );
+		$out->addHTML(
+			Html::successBox( $this->msg( $messages[$notice] )->escaped(), 'uf-manage__notice' )
+		);
+	}
+
+	private function redirect_with_notice( string $notice, string $subpage = '' ): Status {
+		$title = $subpage === '' ? $this->getPageTitle() : $this->getPageTitle( $subpage );
+		$this->getOutput()->redirect( $title->getFullURL( [ 'notice' => $notice ] ) );
+
+		return Status::newGood();
 	}
 
 	private function unsaved_notice(): string {

@@ -2,8 +2,13 @@
 
 .uf-manage__intro,
 .uf-manage__help,
-.uf-manage__back {
+.uf-manage__back,
+.uf-manage__notice {
 	max-width: 40rem;
+}
+
+.uf-manage__notice {
+	margin-bottom: 1rem;
 }
 
 .uf-manage__section {
