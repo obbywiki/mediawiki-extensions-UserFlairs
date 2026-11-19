@@ -44,9 +44,10 @@ class Hooks implements BeforePageDisplayHook {
 	/**
 	 * see https://github.com/obbywiki/mediawiki-extensions-IntegratedProfiles
 	 *
+	 * @param string &$html HTML to append inside the avatar
 	 * @param array<string,mixed> $profile
 	 */
-	public function onIntegratedProfilesAfterAvatar( array $profile, string &$html ): void {
+	public function onIntegratedProfilesAfterAvatar( string &$html, array $profile ): void {
 		if ( !$this->is_enabled() ) {
 			return;
 		}
