@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/obbywiki/mediawiki-extensions-UserFlairs/compare/v0.2.0...v0.2.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* match upstead IP for IntegratedProfilesAfterAvatar's param order ([bc9f249](https://github.com/obbywiki/mediawiki-extensions-UserFlairs/commit/bc9f249fc6bb3ea037b9d4f0a4924c049a709939))
+
 ## [0.2.0](https://github.com/obbywiki/mediawiki-extensions-UserFlairs/compare/v0.1.1...v0.2.0) (2026-09-11)
 
 
